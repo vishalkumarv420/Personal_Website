@@ -200,7 +200,77 @@ body {
 .btn:hover {
     background: #004d40;
 }
+/* Study Material Section */
+.study-material {
+    margin-top: 40px;
+    background-color: #e8f0fe;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.study-material h3 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 5px solid #0056b3;
+    padding-left: 10px;
+}
+
+.study-material .material-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.study-material .material-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.study-material .material-info {
+    flex: 1;
+}
+
+.study-material .material-info h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.study-material .material-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.study-material .material-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.study-material .material-actions a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0056b3;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.study-material .material-actions a:hover {
+    background-color: #003d80;
+}
 /* Skills Section */
 #skills {
     background: #fff;
