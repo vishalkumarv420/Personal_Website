@@ -7,67 +7,37 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-            box-sizing: border-box;
-        }
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
 
-        .tabs {
-            display: flex;
-            flex-direction: column;
-            margin: 1rem 0;
-        }
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
 
-        .tab-buttons {
-            display: flex;
-            background: #333;
-            color: #fff;
-            border-radius: 5px 5px 0 0;
-            overflow: hidden;
-        }
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
 
-        .tab-buttons button {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            background: #333;
-            color: #fff;
-            cursor: pointer;
-            font-size: 1rem;
-            text-align: center;
-        }
+.section {
+    padding: 20px 0;
+}
 
-        .tab-buttons button.active {
-            background: #00796b;
-        }
-
-        .tab-content {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 0 0 5px 5px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Tabs Responsiveness */
-        @media screen and (max-width: 768px) {
-            .tab-buttons {
-                flex-direction: column;
-            }
-
-            .tab-buttons button {
-                border-bottom: 1px solid #444;
-            }
-
-            .tab-buttons button:last-of-type {
-                border-bottom: none;
-            }
-        }
-
+.box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
         /* Other styles */
         * {
             margin: 0;
@@ -493,8 +463,8 @@
             <p>A comprehensive guide to the basics of programming.</p>
         </div>
         <div class="material-actions">
-            <a href="path_to_document_1.pdf" target="_blank">View</a>
-            <a href="path_to_document_1.pdf" download>Download</a>
+            <a href="Document\Document.pdf" target="_blank">View</a>
+            <a href="Document\Document.pdf" download>Download</a>
         </div>
     </div>
     
@@ -506,8 +476,8 @@
             <p>An introduction to web development, including HTML, CSS, and JavaScript.</p>
         </div>
         <div class="material-actions">
-            <a href="path_to_document_2.pdf" target="_blank">View</a>
-            <a href="path_to_document_2.pdf" download>Download</a>
+            <a href="Document\Document.pdf" target="_blank">View</a>
+            <a href="Document\Document.pdf" download>Download</a>
         </div>
     </div>
     
@@ -519,8 +489,8 @@
             <p>Learn about the fundamental data structures and algorithms in this detailed PDF.</p>
         </div>
         <div class="material-actions">
-            <a href="path_to_document_3.pdf" target="_blank">View</a>
-            <a href="path_to_document_3.pdf" download>Download</a>
+            <a href="Document\Document.pdf" target="_blank">View</a>
+            <a href="Document\Document.pdf" download>Download</a>
         </div>
     </div>
 </div>
@@ -547,6 +517,7 @@
         </div>
     </div>
 </section>
+
     <section id="skills">
         <div class="container">
             <h2>Skills</h2>
