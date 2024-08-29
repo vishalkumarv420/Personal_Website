@@ -51,6 +51,26 @@
 .blog-post .btn:hover {
     background: #005c4b;
 }
+/* More Blogs Button - Positioned to the Right */
+.more-blogs {
+    margin-top: 2rem;
+    text-align: right; /* Align the button to the right */
+}
+
+.more-blogs-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.more-blogs-button:hover {
+    background-color: #e64a19;
+}
 /* About Section */
 #about {
     background: #fff;
@@ -125,6 +145,27 @@
 
 .btn:hover {
     background: #004d40;
+}
+/* More Projects Button - Positioned to the Right */
+.more-projects {
+    margin-top: 2rem;
+    text-align: right;
+     /* Align the button to the right */
+}
+
+.more-projects-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #ff9800;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.more-projects-button:hover {
+    background-color: #e68a00;
 }
 /* General Styles */
 body {
@@ -216,6 +257,30 @@ h3 {
         justify-content: flex-start;
         margin-left: 20px;
     }
+    /* More Study Material Button - Positioned to the Right */
+.more-study-material {
+    margin-top: 2rem;
+    text-align: right; /* Align the button to the right */
+}
+
+.more-study-material-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.more-study-material-button:hover {
+    background-color: #e64a19;
+}
+
+.more-study-material-button:hover {
+    background-color: #e64a19;
+}
 }
 /* Skills Section */
 #skills {
