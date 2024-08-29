@@ -68,8 +68,38 @@
     transition: background-color 0.3s ease;
 }
 
+/* More Study material Button - Positioned to the Right */
 .more-blogs-button:hover {
     background-color: #e64a19;
+}
+
+.more-study-material-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Adds some space above the button */
+    position: relative;
+    float: right; /* Aligns the button to the right side */
+}
+
+.more-study-material-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+@media (max-width: 600px) {
+    .more-study-material-button {
+        width: auto; /* Keeps the button size proportional */
+        float: right; /* Keeps the button on the right side on mobile as well */
+    }
 }
 /* About Section */
 #about {
@@ -257,31 +287,7 @@ h3 {
         justify-content: flex-start;
         margin-left: 20px;
     }
-    /* More Study Material Button - Positioned to the Right */
-.more-study-material {
-    margin-top: 2rem;
-    text-align: right; /* Align the button to the right */
-}
 
-.more-study-material-button {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    background-color: #ff5722;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.25rem;
-    transition: background-color 0.3s ease;
-}
-
-.more-study-material-button:hover {
-    background-color: #e64a19;
-}
-
-.more-study-material-button:hover {
-    background-color: #e64a19;
-}
-}
 /* Skills Section */
 #skills {
     background: #fff;
