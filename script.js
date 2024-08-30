@@ -1,5 +1,5 @@
+// Form validation for Gmail address
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    // Prevent form from submitting if email is invalid
     var emailInput = document.getElementById('email');
     var emailError = document.getElementById('email-error');
     var emailValue = emailInput.value;
@@ -11,4 +11,24 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     } else {
         emailError.textContent = ''; // Clear any previous error message
     }
+});
+
+// Typing animation effect
+
+    
+    type()document.addEventListener("DOMContentLoaded", function() {
+    const typingText = document.querySelector(".typing-text");
+    const text = "Hey I'm Vishal";
+    
+    typingText.style.width = text.length + "ch"; // Set the width based on the text length
+    typingText.style.animation = typing 3s steps(${text.length}), blink .75s step-end infinite;
+    
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            typingText.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 150);
+        }
+    };
 });
