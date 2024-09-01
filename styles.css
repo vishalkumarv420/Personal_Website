@@ -1,23 +1,3 @@
-/* Ensure all main content starts below the fixed header */
-main, .container, .projects-section, .about-section {
-    padding-top: px; /* Adjust based on the height of your header */
-}
-
-/* Additional padding for specific sections if needed */
-#projects {
-    padding-top: 1px; /* Ensures the "My Projects" section is not hidden */
-}
-
-@media screen and (max-width: 768px) {
-    /* Adjust padding for smaller screens if necessary */
-    main, .container, .projects-section, .about-section {
-        padding-top: 100px; /* Adjust based on mobile header height */
-    }
-
-    #projects {
-        padding-top: 120px; /* Ensure visibility on mobile as well */
-    }
-}
 
 /* Basic Styles */
 
@@ -38,7 +18,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
 }
 
 .logo h1 {
@@ -88,7 +68,8 @@ main {
         align-items: center;
         background: #333;
         position: absolute;
-        top: 60px;
+      
+        nav-down: 30;
         right: 0;
         width: 100%;
         z-index: 1000;
@@ -606,42 +587,7 @@ button.btn:hover {
 footer {
     background: #333;
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 0.5rem 0.3rem;
     text-align: center;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .nav-toggle {
-        display: block; /* Show the toggle button on mobile */
-    }
-
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background: #333;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .nav-menu.show {
-        display: flex;
-    }
-
-    .nav-menu li {
-        margin: 1rem 0;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-container img {
-        margin-bottom: 1.5rem;
-    }
-}

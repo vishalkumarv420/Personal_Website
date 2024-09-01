@@ -31,4 +31,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             setTimeout(type, 150);
         }
     };
+});document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('show');
+});
+
+document.querySelectorAll('.nav-menu a').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelector('.nav-menu').classList.remove('show');
+    });
 });
