@@ -339,39 +339,47 @@ main {
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* Blog Section */
-.blog {
+/* Blogs Section */
+.blogs-section {
     background-color: #f4f4f4;
     padding: 4rem 0;
     color: #333;
 }
 
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.blogs-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #00796b;
 }
 
-.blog-post, .blog-item {
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid columns */
+    gap: 2rem; /* Space between grid items */
+}
+
+.blog-item {
     background: #fff;
     padding: 1.5rem;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.blog-post h3, .blog-item h3 {
+.blog-item h3 {
     margin-bottom: 1rem;
-    color: #333;
+    font-size: 1.8rem;
+    color: #00796b;
 }
 
-.blog-post p, .blog-item p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+.blog-item p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
     color: #555;
 }
 
-/* Button styles */
-.btn, .blog-post .btn, .blog-item .btn {
+.blog-item .btn {
     display: inline-block;
     background: #00796b;
     color: #fff;
@@ -381,29 +389,29 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.btn:hover, .blog-post .btn:hover, .blog-item .btn:hover {
+.blog-item .btn:hover {
     background: #004d40;
 }
 
 /* More Blogs Button - Positioned to the Right */
-.more-blogs {
+.more-blogs-btn {
+    display: flex;
+    justify-content: flex-end;
     margin-top: 2rem;
-    text-align: right; /* Align the button to the right */
 }
 
-.more-blogs-button {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    background-color: #ff5722;
-    color: #fff;
+.more-blogs-btn .btn {
+    background-color: #00796b;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.25rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-.more-blogs-button:hover {
-    background-color: #e64a19;
+.more-blogs-btn .btn:hover {
+    background-color: #004d40;
 }
 
 /* Study Material Section */
