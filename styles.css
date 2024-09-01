@@ -1,84 +1,108 @@
-/* General Styles */
+/* Ensure all main content starts below the fixed header */
+main, .container, .projects-section, .about-section {
+    padding-top: px; /* Adjust based on the height of your header */
+}
+
+/* Additional padding for specific sections if needed */
+#projects {
+    padding-top: 1px; /* Ensures the "My Projects" section is not hidden */
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust padding for smaller screens if necessary */
+    main, .container, .projects-section, .about-section {
+        padding-top: 100px; /* Adjust based on mobile header height */
+    }
+
+    #projects {
+        padding-top: 120px; /* Ensure visibility on mobile as well */
+    }
+}
+
+/* Basic Styles */
+
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
-h1, h2, h3 {
-    margin-bottom: 20px;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.section {
-    padding: 20px 0;
-}
-
-.box {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-/* Reset and Box-Sizing */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Header Styles */
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
-    position: relative;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;  /* Make the header fixed */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    text-align: center;
-    font-size: 2rem;
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
 }
 
-header nav ul {
+.nav-menu {
     list-style: none;
-    text-align: center;
-    padding: 0;
+    display: flex;
+    margin: 0;
 }
 
-header nav ul li {
-    display: inline;
-    margin: 0 1rem;
+.nav-menu li {
+    margin: 0 15px;
 }
 
-header nav ul li a {
+.nav-menu a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
 }
 
 .nav-toggle {
     display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
     cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
 }
+
+.nav-toggle i {
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Add some padding to the top of the content to prevent it from being hidden under the fixed header */
+main {
+    padding-top: 60px;  /* Adjust this value based on your header height */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Show the toggle button on mobile */
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+}
+
 
 /* Home Section */
 #home {
@@ -334,9 +358,9 @@ header nav ul li a {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 /* Blog Section */
-#blog {
+.blog {
     background-color: #f4f4f4;
-    padding: 3rem 0;
+    padding: 4rem 0;
     color: #333;
 }
 
@@ -346,82 +370,43 @@ header nav ul li a {
     gap: 2rem;
 }
 
-.blog-post {
+.blog-post, .blog-item {
     background: #fff;
     padding: 1.5rem;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.blog-post h3 {
+.blog-post h3, .blog-item h3 {
     margin-bottom: 1rem;
     color: #333;
 }
 
-.blog-post p {
+.blog-post p, .blog-item p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
     color: #555;
 }
 
-.blog-post .btn {
-    background: #00796b;
-    color: #fff;
-}
-
-.blog-post .btn:hover {
-    background: #005c4b;
-}
-/* Read more button style*/
-#blogs {
-    background: #f4f4f4;
-    color: #333;
-    padding: 4rem 2rem;
-}
-
-.blog-grid-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.blog-item {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.blog-item h3 {
-    margin-top: 0;
-}
-
-.blog-item p {
-    margin-bottom: 1rem;
-}
-
-.btn {
+/* Button styles */
+.btn, .blog-post .btn, .blog-item .btn {
     display: inline-block;
     background: #00796b;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.btn:hover, .blog-post .btn:hover, .blog-item .btn:hover {
     background: #004d40;
 }
+
 /* More Blogs Button - Positioned to the Right */
 .more-blogs {
     margin-top: 2rem;
-    text-align: right;
-     /* Align the button to the right */
-}
-
-.more-blogs {
-    margin-top: 2rem;
-    text-align: right;
+    text-align: right; /* Align the button to the right */
 }
 
 .more-blogs-button {
@@ -438,9 +423,6 @@ header nav ul li a {
 .more-blogs-button:hover {
     background-color: #e64a19;
 }
-
-
-
 
 /* Study Material Section */
 .study-material {
@@ -477,7 +459,14 @@ header nav ul li a {
     text-align: center;
 }
 
-.material-actions a {
+.material-actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* Button Styles */
+.material-actions a,
+.more-study-material-button {
     text-decoration: none;
     background-color: #007bff;
     color: #fff;
@@ -485,38 +474,26 @@ header nav ul li a {
     margin: 5px;
     border-radius: 5px;
     transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.material-actions a:hover {
+.material-actions a:hover,
+.more-study-material-button:hover {
     background-color: #0056b3;
-}
-
-.material-actions {
-    display: flex;
-    justify-content: center;
 }
 
 .more-study-material-button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
     text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     margin-top: 20px;
     position: relative;
     float: right;
 }
 
-.more-study-material-button:hover {
-    background-color: #0056b3;
-}
+
 
 /* Contact Section */
 #contact {
