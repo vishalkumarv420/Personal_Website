@@ -107,6 +107,7 @@ header nav ul li a {
 }
 
 .about-image img {
+  text-align: center;
     border-radius: 50%;
     max-width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -192,7 +193,7 @@ header nav ul li a {
 .about-text {
     flex: 2;
     max-width: 600px;
-    text-align: left;
+    text-align: center;
     padding: 20px;
 }
 
@@ -234,118 +235,13 @@ header nav ul li a {
         margin-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
-        
     }
 
     .about-text {
-        text-align: center; /* Center align text on mobile */
+        text-align: center;
         padding: 0;
     }
-
-    .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333; /* सुनिश्चित करें कि यह रंग बैकग्राउंड से अलग हो */
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-}
-
-    .about-text p {
-        font-size: 1rem;
-    }
-}
-.about-image {
-    position: relative;
-    width: 200px; /* Adjust according to your need */
-    height: 200px;
-    margin: 0 auto; /* Center the image */
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(0, 255, 0, 0.7); /* Adjusted glow effect */
-    transition: transform 0.3s ease-in-out;
-   
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    filter: brightness(90%); /* Slightly brighten the image */
-    transition: filter 0.3s ease-in-out;
-}
-
-.about-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 60px rgba(0, 255, 0, 0.5);
-    animation: glow 2s infinite alternate;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.about-image:hover {
-    transform: scale(1.05); /* Slightly enlarge the image on hover */
-}
-
-.about-image:hover img {
-    filter: brightness(100%);
-}
-
-.about-image:hover::before {
-    opacity: 1;
-}
-
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 60px rgba(0, 255, 0, 1);
-    }
-}
-
-.about-content {
-    flex: 1;
-    padding-left: 50px;
-}
-
-.about-content h2 {
-    font-size: 36px;
-    color: #ffffff;
-    margin: 0 0 10px 0;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeInUp 1s ease-in-out forwards;
-}
-
-.about-content h3 {
-    color: #48bd5d;
-    margin: 0 0 10px 0;
-}
-
-.typing-text {
-    font-size: 2.5rem;
-    color: #48bd5d;
-    text-shadow: 0 0 10px rgba(72, 189, 93, 0.9);
-    border-right: 2px solid #48bd5d;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
+}}
 /* Projects Section */
 .projects-section {
     background-color: #ffffff;
