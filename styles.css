@@ -247,7 +247,6 @@ main {
         padding: 0;
     }
 }
-
 /* Projects Section */
 .projects-section {
     background-color: #ffffff;
@@ -320,6 +319,7 @@ main {
 .more-projects-btn .btn:hover {
     background-color: #004d40;
 }
+
 /* Skills Section */
 #skills {
     background: #fff;
