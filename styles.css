@@ -7,10 +7,12 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #26a5ee;
     color: #fff;
     padding: 10px 20px;
+    
     display: flex;
+
     justify-content: space-between;
     align-items: center;
     position: fixed;  /* Make the header fixed */
@@ -417,7 +419,7 @@ main {
 /* Study Material Section */
 .study-material {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 3rem 0;
     padding: 20px;
 }
 
