@@ -251,7 +251,7 @@ main {
 }
 /* Projects Section */
 .projects-section {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     padding: 4rem 0;
     color: #333;
 }
@@ -343,7 +343,7 @@ main {
 }
 /* Blogs Section */
 .blogs-section {
-    background-color: #f4f4f4;
+    background-color: #FFFFFF;
     padding: 4rem 0;
     color: #333;
 }
@@ -417,22 +417,26 @@ main {
 }
 
 /* Study Material Section */
-.study-material {
-    max-width: 1200px;
-    margin: 3rem 0;
-    padding: 20px;
+.study-material-section {
+    background-color: #FFFFFF;
+    padding: 4rem 0;
+    color: #333;
+}
+
+.study-material-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #00796b;
 }
 
 .material-item {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .material-item img {
@@ -441,51 +445,57 @@ main {
 }
 
 .material-info h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #00796b;
 }
 
 .material-info p {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .material-actions {
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
-/* Button Styles */
-.material-actions a,
-.more-study-material-button {
+.material-actions .btn {
     text-decoration: none;
     background-color: #007bff;
     color: #fff;
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
 }
 
-.material-actions a:hover,
-.more-study-material-button:hover {
+.material-actions .btn:hover {
     background-color: #0056b3;
 }
 
-.more-study-material-button {
-    display: inline-block;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    position: relative;
-    float: right;
+.more-study-material-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
 }
 
+.more-study-material-button.btn {
+    background-color: #00796b;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
+.more-study-material-button.btn:hover {
+    background-color: #004d40;
+}
 
 /* Contact Section */
 #contact {
