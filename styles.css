@@ -11,7 +11,7 @@ body {
 
 header {
     width: 100%;
-    background-color: #333;
+    background-color: #46D26E;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,8 +31,14 @@ nav {
     color: #fff;
     font-size: 24px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
+.nav-logo img {
+    height: 30px; /* Adjust the height as needed */
+    margin-right: 5px; /* Add space between the logo image and any text */
+}
 /* Navigation Menu */
 .nav-menu {
     list-style: none;
