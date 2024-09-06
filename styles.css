@@ -196,7 +196,7 @@ nav {
 
 .about-image {
     flex: 1;
-    max-width: 300px;
+    max-width: 190px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.7);
