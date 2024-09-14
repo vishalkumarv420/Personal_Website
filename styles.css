@@ -358,7 +358,7 @@ nav {
 }
 /* Blogs Section */
 .blogs-section {
-    background-color: #FFFFFF;
+    background-color: #ebc1c1dc;
     padding: 4rem 0;
     color: #333;
 }
@@ -433,7 +433,7 @@ nav {
 
 /* Study Material Section */
 .study-material-section {
-    background-color: #FFFFFF;
+    background-color: #f1e7e7fd;
     padding: 4rem 0;
     color: #333;
 }
@@ -514,7 +514,7 @@ nav {
 
 /* Contact Section */
 #contact {
-    background: #fff;
+    background: #e5bdbd9c;
     color: #333;
     padding: 4rem 2rem;
 }
