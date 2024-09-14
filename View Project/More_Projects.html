@@ -2,187 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             font-family: 'Arial', sans-serif;
-            background: #282c34;
-            color: #fff;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            background: url('https://source.unsplash.com/1600x900/?nature,landscape') no-repeat center center/cover;
+            color: #fff;
         }
-
-        .coming-soon-container {
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-            color: #61dafb;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            color: #a9a9a9;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .countdown div {
-            background: #20232a;
             padding: 20px;
-            border-radius: 10px;
-            min-width: 90px;
+            animation: fadeIn 2s ease-out;
         }
-
-        .countdown div span {
-            display: block;
-            font-size: 2em;
-            margin-bottom: 5px;
-            color: #61dafb;
+        h1 {
+            font-size: 4em;
+            letter-spacing: 5px;
+            color: #ffcc00;
+            animation: slideIn 1.5s ease-out forwards;
         }
-
-        .countdown div label {
-            font-size: 0.9em;
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #f1f1f1;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .button {
+            background-color: #ffcc00;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s;
             text-transform: uppercase;
-            color: #a9a9a9;
+            text-decoration: none;
         }
-
-        /* Animation for modern look */
-        .coming-soon-container {
-            animation: fadeIn 1s ease-in-out;
+        .button:hover {
+            background-color: #ffc107;
         }
-
         @keyframes fadeIn {
-            from {
+            0% {
                 opacity: 0;
-                transform: scale(0.9);
             }
-            to {
+            100% {
                 opacity: 1;
-                transform: scale(1);
             }
         }
-
-        /* Desktop-specific styles */
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 4.5em;
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
             }
-
-            p {
-                font-size: 1.4em;
-            }
-
-            .countdown div {
-                padding: 30px;
-                min-width: 120px;
-            }
-
-            .countdown div span {
-                font-size: 3em;
+            100% {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
-
-        /* Phone-specific styles */
-        @media (max-width: 767px) {
-            h1 {
-                font-size: 2.5em;
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
             }
-
-            p {
-                font-size: 1em;
-            }
-
-            .countdown {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .countdown div {
-                padding: 15px;
-                min-width: 70px;
-            }
-
-            .countdown div span {
-                font-size: 1.8em;
+            100% {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
     </style>
 </head>
 <body>
-    <div class="coming-soon-container">
+    <div class="overlay"></div>
+    <div class="content">
         <h1>Coming Soon</h1>
-        <p>We are preparing something amazing. Stay tuned!</p>
-        <div class="countdown">
-            <div>
-                <span id="days">00</span>
-                <label>Days</label>
-            </div>
-            <div>
-                <span id="hours">00</span>
-                <label>Hours</label>
-            </div>
-            <div>
-                <span id="minutes">00</span>
-                <label>Minutes</label>
-            </div>
-            <div>
-                <span id="seconds">00</span>
-                <label>Seconds</label>
-            </div>
+        <p>We are working hard on something amazing. Stay tuned!</p>
+        <div class="button-container">
+            
+            <a href="index.html" class="button">Explore More</a> <!-- Link added here -->
+            
         </div>
     </div>
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("Dec 31, 2024 15:37:25").getTime();
-
-        // Update the count down every 1 second
-        var x = setInterval(function() {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the result in an element with id="days", "hours", etc.
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-
-            // If the count down is finished, write some text 
-            if (distance < 0) {
-                clearInterval(x);
-                document.querySelector(".coming-soon-container").innerHTML = "<h1>We're Live!</h1><p>Our website is now live.</p>";
-            }
-        }, 1000);
-    </script>
 </body>
 </html>

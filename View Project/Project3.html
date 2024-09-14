@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://source.unsplash.com/1600x900/?nature,landscape') no-repeat center center/cover;
+            color: #fff;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+        h1 {
+            font-size: 4em;
+            letter-spacing: 5px;
+            color: #ffcc00;
+            animation: slideIn 1.5s ease-out forwards;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #f1f1f1;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .button {
+            background-color: #ffcc00;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #ffc107;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>Coming Soon</h1>
+        <p>We are working hard on something amazing. Stay tuned!</p>
+        <div class="button-container">
+            
+            <a href="index.html" class="button">Explore More</a> <!-- Link added here -->
+            
+        </div>
+    </div>
+</body>
+</html>
