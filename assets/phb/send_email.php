@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $discussion = htmlspecialchars($_POST['discussion']);
 
     // Email details
-    $to = "vishalkumarb30@gmail.com"; // Yeh aapka email address hai jaha aapko message milega
+    $to = "vishalkumarb5644@gmail.com"; // Yeh aapka email address hai jaha aapko message milega
     $subject = "New Contact Form Message from " . $name;
     $message = "Name: $name\n";
     $message .= "Email: $email\n";
