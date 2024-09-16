@@ -9,6 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
     $discussion = htmlspecialchars(trim($_POST['discussion']));
+    
+    // Validate the name
+    if (empty($name)) {
+        echo "Name is required";
+        exit;
+    }
 
     // Validate the email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -17,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Email details
-    $to = "vishalkumarb5644@gmail.com"; // Your email address
-    $subject = "New Contact Form Message from " . $name;
+    $to = "vishalkumarb30@gmail.com"; // Your email address
+    $subject = "New Discussion Submission"; // Define a subject
     $message = "Name: $name\n";
     $message .= "Email: $email\n";
     $message .= "Message: $discussion\n";
