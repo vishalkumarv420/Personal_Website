@@ -50,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $boundary = md5(uniqid(rand(), true));
 
     // Email headers
-    $headers = "From: info@yourdomain.com\r\n"; // Replace with your domain-based email
+    $headers = "From:codewithrunner.site\n"; // Replace with your domain-based email
     $headers .= "Reply-To: $email\r\n";
-    $headers .= "Return-Path: info@yourdomain.com\r\n";
+    $headers .= "Return-Path:codewithrunner.site\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/alternative; boundary=\"$boundary\"\r\n";
 
