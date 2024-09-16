@@ -184,58 +184,34 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container contact-content">
-            <h2>Contact Me</h2>
-            <p>Fill out the form below to send me a message via email.</p>
-            <form id="contactForm" action="assets/php/send_email.php" method="POST">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email ID:</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email ID" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" placeholder="Your Subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="discussion">Discussion:</label>
-                    <textarea id="discussion" name="discussion" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-    
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            var name = document.getElementById('name').value.trim();
-            var email = document.getElementById('email').value.trim();
-            var subject = document.getElementById('subject').value.trim();
-            var discussion = document.getElementById('discussion').value.trim();
-    
-            // Simple JavaScript validation
-            if (name === "" || email === "" || subject === "" || discussion === "") {
-                alert("All fields are required.");
-                event.preventDefault(); // Prevent the form from submitting
-                return false;
-            }
-    
-            // More detailed validation (optional)
-            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!emailPattern.test(email)) {
-                alert("Please enter a valid email address.");
-                event.preventDefault();
-                return false;
-            }
-    
-            // If everything is okay, the form will be submitted
-        });
-    </script>
-    
+  <section id="contact">
+    <div class="container contact-content">
+        <h2>Contact Me</h2>
+        <p>Fill out the form below to send me a message via email.</p>
+        <form id="contactForm" action="assets/php/send_email.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email ID" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Your Subject" required>
+            </div>
+            <div class="form-group">
+                <label for="discussion">Discussion:</label>
+                <textarea id="discussion" name="discussion" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+
+
 
     <footer>
         <div class="container">

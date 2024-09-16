@@ -1,76 +1,35 @@
 <?php
-// Enable error reporting for debugging
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize and validate form data
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $subject = htmlspecialchars(trim($_POST['subject']));
-    $discussion = htmlspecialchars(trim($_POST['discussion']));
+    $name = strip_tags(trim($_POST["name"]));
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $subject = strip_tags(trim($_POST["subject"]));
+    $message = strip_tags(trim($_POST["discussion"]));
 
-    // Validate the name
-    if (empty($name)) {
-        echo "Name is required";
+    // Validate form inputs
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        echo "Please fill in all fields.";
         exit;
     }
 
-    // Validate the email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email format";
-        exit;
-    }
+    // Recipient email address
+    $recipient = "vishalkumarb30@gmail.com";
 
-    // Validate the subject
-    if (empty($subject)) {
-        echo "Subject is required";
-        exit;
-    }
-
-    // Validate the discussion/message
-    if (empty($discussion)) {
-        echo "Message is required";
-        exit;
-    }
-
-    // Email recipient (Gmail)
-    $to = "vishalkumarb30@gmail.com"; // Replace this with your Gmail address
+    // Email subject
+    $email_subject = "New Contact Form Submission: $subject";
 
     // Email content
-    $message_plain = "Name: $name\nEmail: $email\nMessage: $discussion\n";
-    $message_html = "<html><body>";
-    $message_html .= "<h1>Message from $name</h1>";
-    $message_html .= "<p><strong>Email:</strong> $email</p>";
-    $message_html .= "<p><strong>Message:</strong> $discussion</p>";
-    $message_html .= "</body></html>";
-
-    // Define boundary for multipart message
-    $boundary = md5(uniqid(rand(), true));
+    $email_content = "Name: $name\n";
+    $email_content .= "Email: $email\n\n";
+    $email_content .= "Message:\n$message\n";
 
     // Email headers
-    $headers = "From: $email\r\n"; // Use the sender's email
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: multipart/alternative; boundary=\"$boundary\"\r\n";
-
-    // Email body (plain text and HTML)
-    $body = "--$boundary\r\n";
-    $body .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    $body .= "Content-Transfer-Encoding: 7bit\r\n";
-    $body .= $message_plain . "\r\n";
-    $body .= "--$boundary\r\n";
-    $body .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $body .= "Content-Transfer-Encoding: 7bit\r\n";
-    $body .= $message_html . "\r\n";
-    $body .= "--$boundary--";
+    $email_headers = "From: $name <$email>";
 
     // Send the email
-    if (mail($to, $subject, $body, $headers)) {
+    if (mail($recipient, $email_subject, $email_content, $email_headers)) {
         echo "Message sent successfully!";
     } else {
-        echo "There was a problem sending the message.";
+        echo "Oops! Something went wrong and we couldn't send your message.";
     }
 }
 ?>
