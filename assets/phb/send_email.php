@@ -5,12 +5,12 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize form data
+    // Sanitize and validate form data
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
-    $subject = htmlspecialchars(trim($_POST['subject'])); // Capture subject from form
+    $subject = htmlspecialchars(trim($_POST['subject']));
     $discussion = htmlspecialchars(trim($_POST['discussion']));
-    
+
     // Validate the name
     if (empty($name)) {
         echo "Name is required";
@@ -29,19 +29,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Email details
-    $to = "vishalkumarb30@gmail.com"; // Your email address
-    $message = "Name: $name\n";
-    $message .= "Email: $email\n";
-    $message .= "Message: $discussion\n";
-    
-    // Headers for the email
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
+    // Validate the discussion/message
+    if (empty($discussion)) {
+        echo "Message is required";
+        exit;
+    }
 
-    // Send email
-    if (mail($to, $subject, $message, $headers)) {
+    // Email recipient
+    $to = "vishalkumarb30@gmail.com"; 
+
+    // Email content
+    $message_plain = "Name: $name\nEmail: $email\nMessage: $discussion\n";
+    $message_html = "<html><body>";
+    $message_html .= "<h1>Message from $name</h1>";
+    $message_html .= "<p><strong>Email:</strong> $email</p>";
+    $message_html .= "<p><strong>Message:</strong> $discussion</p>";
+    $message_html .= "</body></html>";
+
+    // Define boundary for multipart message
+    $boundary = md5(uniqid(rand(), true));
+
+    // Email headers
+    $headers = "From: info@yourdomain.com\r\n"; // Replace with your domain-based email
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Return-Path: info@yourdomain.com\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: multipart/alternative; boundary=\"$boundary\"\r\n";
+
+    // Email body (plain text and HTML)
+    $body = "--$boundary\r\n";
+    $body .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $body .= "Content-Transfer-Encoding: 7bit\r\n";
+    $body .= $message_plain . "\r\n";
+    $body .= "--$boundary\r\n";
+    $body .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $body .= "Content-Transfer-Encoding: 7bit\r\n";
+    $body .= $message_html . "\r\n";
+    $body .= "--$boundary--";
+
+    // Send the email
+    if (mail($to, $subject, $body, $headers)) {
         echo "Message sent successfully!";
     } else {
         echo "There was a problem sending the message.";
