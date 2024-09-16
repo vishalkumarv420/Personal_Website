@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize and validate form data
     $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $subject = htmlspecialchars(trim($_POST['subject']));
     $discussion = htmlspecialchars(trim($_POST['discussion']));
 
@@ -50,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $boundary = md5(uniqid(rand(), true));
 
     // Email headers
-    $headers = "From:codewithrunner.site\n"; // Replace with your domain-based email
+    $headers = "From: noreply@codewithrunner.site\r\n"; // Replace with your domain-based email
     $headers .= "Reply-To: $email\r\n";
-    $headers .= "Return-Path:codewithrunner.site\n";
+    $headers .= "Return-Path: noreply@codewithrunner.site\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/alternative; boundary=\"$boundary\"\r\n";
 
