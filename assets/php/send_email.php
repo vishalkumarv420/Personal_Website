@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $recipient = "vishalkumarb30@gmail.com";
 
     // Email subject
-    $email_subject = "New Contact Form Submission: $subject";
+    $email_subject = "$subject";
 
     // Email content
     $email_content = "Name: $name\n";
