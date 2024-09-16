@@ -210,33 +210,6 @@
     </div>
 </section>
 
-
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent form submission
-        const form = this;
-        const formData = new FormData(form);
-    
-        fetch('assets/php/send_email.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                alert(data.message); // Show success message
-                form.reset(); // Clear form fields
-            } else {
-                alert(data.message); // Show error message
-            }
-        })
-        .catch(error => {
-            alert('There was an error sending the message.');
-        });
-    });
-    </script>
-    
-
     <footer>
         <div class="container">
             <p>&copy; 2024 Vishal Kumar. All rights reserved.</p>

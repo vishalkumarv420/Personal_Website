@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate form inputs
     if (empty($name) || empty($email) || empty($subject) || empty($message)) {
-        echo json_encode(['status' => 'error', 'message' => 'Please fill in all fields.']);
+        echo "Please fill in all fields.";
         exit;
     }
 
@@ -27,9 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send the email
     if (mail($recipient, $email_subject, $email_content, $email_headers)) {
-        echo json_encode(['status' => 'success', 'message' => 'Message sent successfully!']);
+        echo "Message sent successfully!";
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Oops! Something went wrong and we couldn\'t send your message.']);
+        echo "Oops! Something went wrong and we couldn't send your message.";
     }
 }
 ?>
