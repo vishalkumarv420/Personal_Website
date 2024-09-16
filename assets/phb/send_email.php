@@ -24,10 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Email details
     $to = "vishalkumarb30@gmail.com"; // Your email address
-    $subject = "$subject"; // Define a subject
+    $subject = "Your Subject"; // Define a subject
     $message = "Name: $name\n";
     $message .= "Email: $email\n";
     $message .= "Message: $discussion\n";
+    
+    // Proceed with mail function or other logic
 
     // Headers for the email
     $headers = "From: $email\r\n";
