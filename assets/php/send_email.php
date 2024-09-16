@@ -35,10 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Email recipient
-    $to = "vishalkumarb30@gmail.com";  // Replace with your email address
+    // Email recipient (Gmail)
+    $to = "vishalkumarb30@gmail.com"; // Replace this with your Gmail address
 
-    // Email content (plain text and HTML)
+    // Email content
     $message_plain = "Name: $name\nEmail: $email\nMessage: $discussion\n";
     $message_html = "<html><body>";
     $message_html .= "<h1>Message from $name</h1>";
@@ -50,9 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $boundary = md5(uniqid(rand(), true));
 
     // Email headers
-    $headers = "From: no-reply@codewithrunner.site\r\n"; // Use a valid domain email
+    $headers = "From: $email\r\n"; // Use the sender's email
     $headers .= "Reply-To: $email\r\n";
-    $headers .= "Return-Path: no-reply@codewithrunner.site\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/alternative; boundary=\"$boundary\"\r\n";
 
@@ -73,8 +72,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "There was a problem sending the message.";
     }
-} else {
-    // In case the form is not submitted properly
-    echo "Invalid request method!";
 }
 ?>
