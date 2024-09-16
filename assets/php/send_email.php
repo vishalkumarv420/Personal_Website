@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Recipient email address
-    $recipient = "vishalkumarb30@gmail.com";
+    $recipient = "contact@codewithrunner.site";
 
     // Email subject
     $email_subject = "$subject";
