@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Email details
     $to = "vishalkumarb30@gmail.com"; // Your email address
-    $subject = "New Discussion Submission"; // Define a subject
+    $subject = "subject: $subject"; // Define a subject
     $message = "Name: $name\n";
     $message .= "Email: $email\n";
     $message .= "Message: $discussion\n";
