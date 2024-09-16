@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize form data
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
+    $subject = htmlspecialchars(trim($_POST['subject'])); // Capture subject from form
     $discussion = htmlspecialchars(trim($_POST['discussion']));
     
     // Validate the name
@@ -22,15 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    // Validate the subject
+    if (empty($subject)) {
+        echo "Subject is required";
+        exit;
+    }
+
     // Email details
     $to = "vishalkumarb30@gmail.com"; // Your email address
-    $subject = "Your Subject"; // Define a subject
     $message = "Name: $name\n";
     $message .= "Email: $email\n";
     $message .= "Message: $discussion\n";
     
-    // Proceed with mail function or other logic
-
     // Headers for the email
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
