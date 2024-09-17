@@ -197,10 +197,9 @@
     <div class="contact-content">
         <h2>Contact Us</h2>
         <p>Feel free to reach out to us for any inquiries or support. We are here to help!</p>
-    </div>
 
-    <div class="contact-form-container">
-        <form action="#" method="POST">
+        <!-- Single Form Starts Here -->
+        <form id="contactForm" action="assets/php/send_email.php" method="POST">
             <div class="name-email-group">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -219,7 +218,7 @@
                 </div>
             </div>
 
-            <!-- Move the Subject outside of name-email-group -->
+            <!-- Subject Field Outside of name-email-group -->
             <div class="form-group">
                 <label for="subject">Subject</label>
                 <div class="input-container">
@@ -237,10 +236,11 @@
             </div>
 
             <button type="submit" class="btn">Send Message</button>
-            
+
             <!-- Success Message -->
             <p class="success-message">Your message has been sent successfully!</p>
         </form>
+        <!-- Form Ends Here -->
     </div>
 </section>
     <footer>
