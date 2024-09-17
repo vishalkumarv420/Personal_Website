@@ -35,25 +35,33 @@
         </div>
     </section>
     
-<section id="about" class="about-section">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-image">
-                <img src="assets\image\vishal.jpeg" alt="Vishal Kumar">
-            </div>
-            <div class="about-text">
-                <h1>Hey I'm Vishal Kumar</h1>
-                <p>I’m a passionate Computer Science student with a keen interest in programming and web development.</p>
-                <ul class="skills-list">
-                    <li><i class="fas fa-code"></i> Proficient in Python and JavaScript</li>
-                    <li><i class="fas fa-laptop-code"></i> Web development experience</li>
-                    <li><i class="fas fa-graduation-cap"></i> Currently pursuing a diploma in Computer Science</li>
-                </ul>
-                <a href="#projects" class="btn">View My Projects</a>
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets\image\vishal.jpeg" alt="Vishal Kumar">
+                </div>
+                <div class="about-text">
+                    <h2>Hey I'm Vishal Kumar</h2>
+                    <p>I’m a passionate Computer Science student with a keen interest in programming and web development.</p>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-code"></i> Proficient in Python and JavaScript</li>
+                        <li><i class="fas fa-laptop-code"></i> Web development experience</li>
+                        <li><i class="fas fa-graduation-cap"></i> Currently pursuing a diploma in Computer Science</li>
+                    </ul>
+                    <a href="#projects" class="btn">View My Projects</a>
+    
+                    <!-- Social Media Links -->
+                    <div class="social-links">
+                        <a href="https://youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
   
     <section id="projects" class="projects-section">
     <div class="container">
@@ -184,32 +192,57 @@
         </div>
     </section>
 
-  <section id="contact">
-    <div class="container contact-content">
-        <h2>Contact Me</h2>
-        <p>Fill out the form below to send me a message via email.</p>
-        <form id="contactForm" action="assets/php/send_email.php" method="POST">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
+<!-- Contact Section -->
+<section id="contact">
+    <div class="contact-content">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out to us for any inquiries or support. We are here to help!</p>
+    </div>
+
+    <div class="contact-form-container">
+        <form action="#" method="POST">
+            <div class="name-email-group">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <div class="input-container">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-container">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
             </div>
+
+            <!-- Move the Subject outside of name-email-group -->
             <div class="form-group">
-                <label for="email">Email ID:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email ID" required>
+                <label for="subject">Subject</label>
+                <div class="input-container">
+                    <i class="fas fa-tag"></i>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                </div>
             </div>
+
             <div class="form-group">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" placeholder="Your Subject" required>
+                <label for="message">Message</label>
+                <div class="input-container">
+                    <i class="fas fa-comments"></i>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="discussion">Discussion:</label>
-                <textarea id="discussion" name="discussion" rows="5" placeholder="Your Message" required></textarea>
-            </div>
+
             <button type="submit" class="btn">Send Message</button>
+            
+            <!-- Success Message -->
+            <p class="success-message">Your message has been sent successfully!</p>
         </form>
     </div>
 </section>
-
     <footer>
         <div class="container">
             <p>&copy; 2024 Vishal Kumar. All rights reserved.</p>
