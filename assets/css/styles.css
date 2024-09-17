@@ -611,18 +611,23 @@ textarea {
     margin-top: 20px;
 }
 
-/* Button Styling */
-.contact-form-container button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: #fff;
+/* Button styles for Send Message */
+button[type="submit"] {
+    background-color: #0a604c; /* Primary button color */
+    color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
+    padding: 12px 25px; /* Adjusted padding for a balanced look */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 1.2rem; /* Standard font size */
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Hover effect */
+button[type="submit"]:hover {
+    background-color: #2980b9; /* Darken the background on hover */
 }
 
 .contact-form-container button:hover {
