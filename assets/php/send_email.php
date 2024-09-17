@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = strip_tags(trim($_POST["name"]));
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $subject = strip_tags(trim($_POST["subject"]));
-    $message = strip_tags(trim($_POST["discussion"]));
+    $message = strip_tags(trim($_POST["message"])); // corrected name attribute
 
     // Validate form inputs
     if (empty($name) || empty($email) || empty($subject) || empty($message)) {
