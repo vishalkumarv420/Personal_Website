@@ -56,9 +56,9 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     })
     .then(data => {
         if (data.status === 'success') {
-            // Show the success message
-            document.querySelector('.success-message').textContent = data.message;
+            // Show the success modal and overlay
             document.getElementById('success-modal').style.display = 'block';
+            document.querySelector('.popup-overlay').classList.add('active');
 
             // Clear form fields after successful submission
             document.getElementById('contactForm').reset();
@@ -72,14 +72,16 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     });
 });
 
-// Close modal
+// Close modal when the close button is clicked
 document.getElementById('close-modal').addEventListener('click', function() {
     document.getElementById('success-modal').style.display = 'none';
+    document.querySelector('.popup-overlay').classList.remove('active');
 });
 
 // Close modal when clicking outside of it
 window.onclick = function(event) {
     if (event.target == document.getElementById('success-modal')) {
         document.getElementById('success-modal').style.display = 'none';
+        document.querySelector('.popup-overlay').classList.remove('active');
     }
 };

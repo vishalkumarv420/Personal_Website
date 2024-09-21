@@ -707,27 +707,30 @@ button[type="submit"]:hover {
     color: #0a604c;
 }
 
-/* Success button */
-#success-modal button {
-    background-color: #0a604c;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
+#success-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 500px;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
-#success-modal button:hover {
-    background-color: #2980b9;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+/* Active class to make pop-up visible */
+#success-modal.active {
+    display: block;
+    opacity: 1;
 }
 
-/* Overlay when the modal appears */
+/* Overlay styles */
 .popup-overlay {
     display: none;
     position: fixed;
@@ -737,8 +740,6 @@ button[type="submit"]:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
 /* Show overlay */
