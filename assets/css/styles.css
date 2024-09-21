@@ -665,17 +665,29 @@ input:focus, textarea:focus {
 
 /* Modal Styles */
 .modal {
-    display: none; 
-    position: fixed; 
-    left: 50%; 
-    top: 20%; /* Adjust this value to position above the Connect section */
-    transform: translateX(-50%); 
-    background-color: #fff; 
-    padding: 20px; 
-    border-radius: 4px; 
-    text-align: center; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -20%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+        padding: 20px;
+    }
 }
 
 .modal button {
