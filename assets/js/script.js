@@ -86,3 +86,4 @@ window.addEventListener('click', (event) => {
         document.querySelector('.popup-overlay').classList.remove('active');
     }
 });
+

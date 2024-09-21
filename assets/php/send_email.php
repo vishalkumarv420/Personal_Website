@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Recipient email address (replace with your email)
-    $recipient = "contact@codewithrunner.site"; 
+    $recipient = "your-email@example.com"; // Replace with your email address
 
     // Email subject
     $email_subject = "$subject";
@@ -38,14 +38,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Email headers
     $email_headers = "From: $name <$email>";
 
-    // Send the email
+    // Send the email using the mail() function
     if (mail($recipient, $email_subject, $email_content, $email_headers)) {
+        // If email sent successfully, return success response
         echo json_encode(['status' => 'success', 'message' => 'Your message has been sent successfully!']);
     } else {
+        // If email sending failed, return error response
         echo json_encode(['status' => 'error', 'message' => 'Oops! Something went wrong and we couldn\'t send your message.']);
     }
 } else {
-    // Handle case when the request is not POST
+    // Handle invalid request method
     echo json_encode(['status' => 'error', 'message' => 'Invalid request method.']);
 }
 ?>
