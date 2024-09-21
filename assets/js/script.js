@@ -37,6 +37,7 @@ navLinks.forEach(link => {
     });
 });
 
+// Handle form submission
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -79,9 +80,9 @@ document.getElementById('close-modal').addEventListener('click', function() {
 });
 
 // Close modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target == document.getElementById('success-modal')) {
+window.addEventListener('click', (event) => {
+    if (event.target === document.querySelector('.popup-overlay')) {
         document.getElementById('success-modal').style.display = 'none';
         document.querySelector('.popup-overlay').classList.remove('active');
     }
-};
+});

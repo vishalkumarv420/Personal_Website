@@ -674,7 +674,7 @@ button[type="submit"]:hover {
 
 /* Modal Header */
 #success-modal h2 {
-    font-size: 1.5rem; /* Adjusted for better responsiveness */
+    font-size: 1.5rem; /* Responsive font size */
     color: #0a604c;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
@@ -723,7 +723,7 @@ button[type="submit"]:hover {
 }
 
 #success-modal button:hover {
-    background-color: #2980b9;
+    background-color: #2980b9; /* Change to a darker shade if preferred */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -746,6 +746,7 @@ button[type="submit"]:hover {
     display: block;
     opacity: 1;
 }
+
 
 /* Footer */
 footer {
