@@ -56,8 +56,12 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     })
     .then(data => {
         if (data.status === 'success') {
+            // Show the success message
             document.querySelector('.success-message').textContent = data.message;
             document.getElementById('success-modal').style.display = 'block';
+
+            // Clear form fields after successful submission
+            document.getElementById('contactForm').reset();
         } else {
             alert(data.message);
         }
