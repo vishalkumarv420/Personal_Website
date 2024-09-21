@@ -48,7 +48,12 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
         if (data.status === 'success') {
             document.querySelector('.success-message').textContent = data.message;
@@ -59,6 +64,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     })
     .catch(error => {
         console.error('Error:', error);
+        alert('There was a problem with the submission. Please try again later.');
     });
 });
 
