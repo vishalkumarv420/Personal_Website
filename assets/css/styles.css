@@ -647,17 +647,104 @@ button[type="submit"]:hover {
     background-color: #2980b9; /* Darken the background on hover */
 }
 
-/* Success Modal Styles */
-.modal {
+/* Success Pop-up Window Styling */
+#success-modal {
     display: none; /* Initially hidden */
-    position: fixed; /* Stay in place */
-    left: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 500px;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Active class to make pop-up visible */
+#success-modal.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Scale effect when visible */
+}
+
+/* Modal Header */
+#success-modal h2 {
+    font-size: 1.8rem;
+    color: #0a604c;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Success message inside pop-up */
+#success-modal p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Close button styling */
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#close-modal:hover {
+    color: #0a604c;
+}
+
+/* Success button */
+#success-modal button {
+    background-color: #0a604c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#success-modal button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Overlay when the modal appears */
+.popup-overlay {
+    display: none;
+    position: fixed;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
-    z-index: 1000; /* Sit on top */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show overlay */
+.popup-overlay.active {
+    display: block;
+    opacity: 1;
 }
 
 .modal-content {

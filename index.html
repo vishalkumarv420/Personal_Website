@@ -264,16 +264,16 @@
         </div>
         <!-- Form Ends Here -->
 
-        <!-- Success Modal -->
-        <div id="success-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="close-modal">&times;</span>
-                <p class="success-message">Your message has been sent successfully!</p>
-            </div>
-        </div>
+       <!-- Success Modal -->
+<div id="success-modal" class="modal">
+    <button id="close-modal">&times;</button> <!-- Close button -->
+    <h2>Success!</h2>
+    <p>Your message has been sent successfully!</p>
+    <button type="button" onclick="document.getElementById('success-modal').style.display='none';">OK</button>
+</div>
 
-        <!-- Background overlay when pop-up appears -->
-        <div class="popup-overlay" id="popup-overlay"></div>
+<!-- Background Overlay -->
+<div class="popup-overlay"></div>
     </div>
 </section>
 
