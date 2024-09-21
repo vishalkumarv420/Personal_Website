@@ -17,8 +17,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url('https://source.unsplash.com/1600x900/?nature,landscape') no-repeat center center/cover;
+            background: url('https://source.unsplash.com/1600x900/?technology,futuristic') no-repeat center center/cover;
             color: #fff;
+            position: relative;
+            overflow: hidden;
         }
         .overlay {
             position: absolute;
@@ -26,7 +28,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1;
         }
         .content {
@@ -39,12 +41,13 @@
         h1 {
             font-size: 4em;
             letter-spacing: 5px;
-            color: #ffcc00;
-            animation: slideIn 1.5s ease-out forwards;
+            color: #00e676;
+            text-transform: uppercase;
+            animation: zoomIn 1.5s ease-out forwards;
         }
         p {
-            font-size: 1.5em;
-            margin-top: 20px;
+            font-size: 1.3em;
+            margin-top: 15px;
             color: #f1f1f1;
             animation: fadeInUp 1.5s ease-out forwards;
         }
@@ -52,20 +55,21 @@
             margin-top: 30px;
         }
         .button {
-            background-color: #ffcc00;
-            padding: 15px 30px;
+            background-color: #00e676;
+            padding: 15px 35px;
             border: none;
             border-radius: 50px;
-            font-size: 1em;
+            font-size: 1.1em;
             cursor: pointer;
-            color: #333;
+            color: #000;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
             text-transform: uppercase;
             text-decoration: none;
         }
         .button:hover {
-            background-color: #ffc107;
+            background-color: #00c853;
+            transform: scale(1.05);
         }
         @keyframes fadeIn {
             0% {
@@ -75,13 +79,13 @@
                 opacity: 1;
             }
         }
-        @keyframes slideIn {
+        @keyframes zoomIn {
             0% {
-                transform: translateY(-50px);
+                transform: scale(0.7);
                 opacity: 0;
             }
             100% {
-                transform: translateY(0);
+                transform: scale(1);
                 opacity: 1;
             }
         }
@@ -95,18 +99,33 @@
                 opacity: 1;
             }
         }
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            z-index: 0;
+            opacity: 0.2;
+        }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
+    <div class="stars"></div>
     <div class="content">
         <h1>Coming Soon</h1>
         <p>We are working hard on something amazing. Stay tuned!</p>
         <div class="button-container">
-            
-            <a href="https://codewithrunner.site/" class="button">Explore More</a> <!-- Link added here -->
-            
+            <a href="javascript:void(0)" class="button" onclick="goBack()">Explore More</a>
         </div>
     </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
