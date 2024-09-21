@@ -56,6 +56,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         return response.json();
     })
     .then(data => {
+        console.log(data); // Log response data for debugging
         if (data.status === 'success') {
             // Show the success modal and overlay
             document.getElementById('success-modal').style.display = 'block';
@@ -86,4 +87,3 @@ window.addEventListener('click', (event) => {
         document.querySelector('.popup-overlay').classList.remove('active');
     }
 });
-
