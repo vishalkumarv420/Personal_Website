@@ -328,20 +328,65 @@ nav {
     background: #fff;
     color: #333;
     padding: 4rem 2rem;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #222;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* This makes it responsive */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centering the grid */
 }
 
 .skill-item {
-    background: #f4f4f4;
-    padding: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
 }
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-item h3 {
+    font-size: 1.6rem;
+    color: #ff7e5f;
+    margin-bottom: 1rem;
+}
+
+.skill-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    #skills h2 {
+        font-size: 2rem;
+    }
+
+    .skill-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .skill-item p {
+        font-size: 0.9rem;
+    }
+}
+
 /* Blogs Section */
 .blogs-section {
     background-color: #ebc1c1dc;
