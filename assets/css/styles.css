@@ -659,8 +659,8 @@ button[type="submit"]:hover {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    max-width: 500px;
-    width: 90%;
+    max-width: 400px; /* Adjust max-width for smaller screens */
+    width: 90%; /* Take up most of the width on small screens */
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
@@ -674,7 +674,7 @@ button[type="submit"]:hover {
 
 /* Modal Header */
 #success-modal h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Adjusted for better responsiveness */
     color: #0a604c;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
@@ -682,12 +682,12 @@ button[type="submit"]:hover {
 
 /* Success message inside pop-up */
 #success-modal p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Adjusted font size */
     color: #333;
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* Close button styling */
@@ -707,30 +707,27 @@ button[type="submit"]:hover {
     color: #0a604c;
 }
 
-#success-modal {
-    display: none; /* Initially hidden */
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    max-width: 500px;
-    width: 90%;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+/* Success button */
+#success-modal button {
+    background-color: #0a604c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem; /* Adjusted font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Active class to make pop-up visible */
-#success-modal.active {
-    display: block;
-    opacity: 1;
+#success-modal button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Overlay styles */
+/* Overlay when the modal appears */
 .popup-overlay {
     display: none;
     position: fixed;
@@ -740,6 +737,8 @@ button[type="submit"]:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 /* Show overlay */
@@ -747,20 +746,6 @@ button[type="submit"]:hover {
     display: block;
     opacity: 1;
 }
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-.success-message {
-    font-size: 1.2rem;
-    color: green;
-}
-
 
 /* Footer */
 footer {
