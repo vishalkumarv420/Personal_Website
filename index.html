@@ -222,7 +222,7 @@
         <h2>Contact Us</h2>
         <p>Feel free to reach out to us for any inquiries or support. We are here to help!</p>
 
-        <!-- Single Form Starts Here -->
+        <!-- Form Starts Here -->
         <form id="contactForm" action="assets/php/send_email.php" method="POST">
             <div class="name-email-group">
                 <div class="form-group">
@@ -242,7 +242,6 @@
                 </div>
             </div>
 
-            <!-- Subject Field Outside of name-email-group -->
             <div class="form-group">
                 <label for="subject">Subject</label>
                 <div class="input-container">
@@ -260,11 +259,16 @@
             </div>
 
             <button type="submit" class="btn">Send Message</button>
-
-            <!-- Success Message -->
-            <p class="success-message">Your message has been sent successfully!</p>
         </form>
         <!-- Form Ends Here -->
+
+        <!-- Success Modal -->
+        <div id="success-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-modal">&times;</span>
+                <p class="success-message">Your message has been sent successfully!</p>
+            </div>
+        </div>
     </div>
 </section>
 

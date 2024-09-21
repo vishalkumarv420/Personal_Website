@@ -36,3 +36,40 @@ navLinks.forEach(link => {
         navMenu.classList.remove('show'); // Close the mobile menu
     });
 });
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Create a FormData object
+    var formData = new FormData(this);
+
+    // Send form data using fetch
+    fetch('assets/php/send_email.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            document.querySelector('.success-message').textContent = data.message;
+            document.getElementById('success-modal').style.display = 'block';
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+// Close modal
+document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('success-modal').style.display = 'none';
+});
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == document.getElementById('success-modal')) {
+        document.getElementById('success-modal').style.display = 'none';
+    }
+};
