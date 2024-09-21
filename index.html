@@ -222,51 +222,33 @@
         <h2>Contact Us</h2>
         <p>Feel free to reach out to us for any inquiries or support. We are here to help!</p>
 
-        <!-- Form Starts Here -->
         <div class="contact-form-container">
-            <form id="contactForm" action="#" method="POST">
+            <form id="contactForm" method="POST">
                 <div class="name-email-group">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <div class="input-container">
-                            <i class="fas fa-user"></i>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
-
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <div class="input-container">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <div class="input-container">
-                        <i class="fas fa-tag"></i>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
                 </div>
-
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <div class="input-container">
-                        <i class="fas fa-comments"></i>
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
-
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
-        <!-- Form Ends Here -->
 
         <!-- Success Modal -->
         <div id="success-modal" class="modal">
-            <button id="close-modal">&times;</button> <!-- Close button -->
+            <button id="close-modal">&times;</button>
             <h2>Success!</h2>
             <p>Your message has been sent successfully!</p>
             <button type="button" onclick="document.getElementById('success-modal').style.display='none';">OK</button>
