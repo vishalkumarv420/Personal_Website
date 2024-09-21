@@ -668,7 +668,7 @@ input:focus, textarea:focus {
     display: none;
     position: fixed;
     left: 50%;
-    top: 20%;
+    top: 40%;
     transform: translate(-50%, -20%);
     background-color: #fff;
     padding: 30px;
