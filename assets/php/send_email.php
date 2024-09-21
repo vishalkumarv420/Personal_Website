@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Recipient email address (replace with your email)
-    $recipient = "your-email@example.com"; // Replace with your email address
+    $recipient = "contact@codewithrunner.site"; // Replace with your email address
 
     // Email subject
     $email_subject = "$subject";
