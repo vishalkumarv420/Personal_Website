@@ -94,6 +94,6 @@ script.text = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
   "url": "https://codewithrunner.site",
-  "logo": "assets/image/vishal logo.jpg"
+  "logo": "assets/image/Logo.png"
 });
 document.head.appendChild(script);
