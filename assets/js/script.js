@@ -87,3 +87,13 @@ window.addEventListener('click', (event) => {
         document.querySelector('.popup-overlay').classList.remove('active');
     }
 });
+
+const script = document.createElement('script');
+script.type = 'application/ld+json';
+script.text = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "https://codewithrunner.site",
+  "logo": "assets/image/vishal logo.jpg"
+});
+document.head.appendChild(script);
