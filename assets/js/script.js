@@ -88,12 +88,3 @@ window.addEventListener('click', (event) => {
     }
 });
 
-const script = document.createElement('script');
-script.type = 'application/ld+json';
-script.text = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "url": "https://codewithrunner.site",
-  "logo": "assets/image/Logo.png"
-});
-document.head.appendChild(script);
