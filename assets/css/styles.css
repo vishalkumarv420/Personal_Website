@@ -248,7 +248,7 @@ nav {
     width: clamp(200px, 25vw, 300px);
     height: clamp(220px, 30vw, 320px);
     border-radius: 50% / 40%;
-    border: 5px solid #519ae8;
+    border: px solid #519ae8;
     object-fit: cover;
     transition: transform 0.4s, box-shadow 0.4s;
     box-shadow: 0 0 20px rgba(81, 154, 232, 0.6); /* Added Glow Effect */
@@ -297,12 +297,13 @@ nav {
 /* Heading styling */
 .about-text h2 {
     font-size: clamp(24px, 5vw, 36px);
-    color: #007bff;
+    color: #3e5063;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     letter-spacing: 1.5px;
     text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+    behavior: "alterlate" ;
 }
 
 /* Paragraph styling */
