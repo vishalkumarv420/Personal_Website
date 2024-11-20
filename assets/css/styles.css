@@ -981,26 +981,27 @@ input:focus, textarea:focus {
     width: 48%;
 }
 
-/* Submit Button Centered */
 button[type="submit"] {
-    margin: 0 auto;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    color: #fff;
-    padding: 12px 30px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #2c3e50;
+    padding: 15px 40px;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.4s ease;
     display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 button[type="submit"]:hover {
-    background: linear-gradient(135deg, #fad0c4, #ff9a9e);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Modal Styles */
 .modal {
