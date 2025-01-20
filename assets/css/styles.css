@@ -1002,6 +1002,7 @@ button[type="submit"]:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+
 /* Modal Styles */
 .modal {
     display: none;
@@ -1071,6 +1072,7 @@ button[type="submit"]:hover {
         font-size: 2rem;
     }
 }
+
 
 /* Footer Section */
 footer {
