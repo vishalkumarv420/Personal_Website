@@ -887,7 +887,7 @@ nav {
 
 /* Contact Section */
 #contact {
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    background: #d59b9bfd;
     border-top: 5px solid #d13434; /* Adds a sleek top border */
     padding: 80px 20px;
     text-align: center;
